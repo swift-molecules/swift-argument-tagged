@@ -1,13 +1,18 @@
-import Testing
-
 import Argument
+import Argument_Tagged
 import Tagged
-@testable import Argument_Tagged
+import Tagged_Standard_Library_Integration
+import Testing
 
 extension Argument.Environment.Variable.Name {
     @Suite("Argument.Environment.Variable.Name")
     struct Test {
         @Suite struct Unit {
+            @Test func `constructs from an underlying string`() {
+                let name = Argument.Environment.Variable.Name(_unchecked: "MYAPP_VERBOSITY")
+                #expect(name.underlying == "MYAPP_VERBOSITY")
+            }
+
             @Test func `constructs from string literal via Tagged SLI`() {
                 let name: Argument.Environment.Variable.Name = "MYAPP_VERBOSITY"
                 #expect(name.underlying == "MYAPP_VERBOSITY")

@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-argument.git",
+            url: "https://github.com/swift-atoms/swift-argument.git",
             branch: "main"
         ),
         .package(
@@ -41,6 +41,10 @@ let package = Package(
                 "Argument Tagged",
                 .product(name: "Argument", package: "swift-argument"),
                 .product(name: "Tagged", package: "swift-tagged"),
+                .product(
+                    name: "Tagged Standard Library Integration",
+                    package: "swift-tagged"
+                ),
             ],
             path: "Tests/Argument Tagged Tests"
         ),
