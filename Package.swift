@@ -32,13 +32,13 @@ let package = Package(
             name: "Argument Tagged",
             dependencies: [
                 .product(name: "Argument", package: "swift-argument"),
+                .product(name: "Argument Option", package: "swift-argument"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .testTarget(
             name: "Argument Tagged Tests",
             dependencies: [
-                "Argument Tagged",
                 .product(name: "Argument", package: "swift-argument"),
                 .product(name: "Tagged", package: "swift-tagged"),
                 .product(
